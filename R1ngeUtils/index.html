@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Unity Web Player | TapTower</title>
+
+  <!-- NEED TO CHANGE EVERY BUILD :SADLY_FACE: -->
+  <link rel="preload" href="Build/b625e3ce0689db91878e7f10033f26f9.data.br" as="fetch" crossorigin />
+  <link rel="preload" href="Build/94aefaca5bb5c8e87570564db61d4d9c.wasm.br" as="fetch" crossorigin />
+  <link rel="preload" href="Build/0280e7c78c35911e0a14b27055e7180d.loader.js" as="script">
+  <link rel="preload" href="Build/b863a6937107ae1777bd382166efbeb9.framework.js.br" as="script">
+  
+  <link rel="shortcut icon" href="TemplateData/favicon.ico">
+  <link rel="stylesheet" href="TemplateData/style.css">
+  <link rel="manifest" href="manifest.webmanifest">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <!--<script src="https://js-de.sentry-cdn.com/fb9b179eb14ab8026df85e498dafff69.min.js" crossorigin="anonymous"></script> -->
+  <script src="tonconnect-ui.min.js"></script>
+  <script src="https://unpkg.com/tonweb@0.0.66/dist/tonweb.js"></script>
+  <script src="tma.js"></script>
+  <style>
+    body
+    {
+      height: 100vh;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+<!-- <div id="unity-container"> -->
+<canvas id="unity-canvas" width=1080 height=1920 tabindex="-1"></canvas>
+<div id="unity-loading-bar">
+  <div id="custom-logo-background">
+    <div id="custom-logo"></div>   
+  </div>
+  <div id="unity-progress-bar-empty">
+    <div id="unity-progress-bar-full"></div>
+  </div>
+</div>
+<div id="unity-warning"> </div>
+<!-- </div> -->
+<script src="index.js"></script>
+
+<script type="text/javascript">
+  window.initCdTma({ id: 6041519 }).then(show => { window.show = show; console.log("Init complete") }).catch(e => console.log(e))
+</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+  ym(97866381, "init", {
+    clickmap:true,
+    trackLinks:true,
+    accurateTrackBounce:true,
+    webvisor:true
+  });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/97866381" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q89NMC01PM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Q89NMC01PM');
+</script>
+
+<!--<script src="https://tganalytics.xyz/index.js" type="text/javascript"></script>
+<script>
+  window.telegramAnalytics.init({
+    token: 'eyJhcHBfbmFtZSI6IlJlbnRfVHljb29uX0dhbWUiLCJhcHBfdXJsIjoiaHR0cHMvL3QubWUvUmVudF9Ub3dlcl9HYW1lX2JvdCIsImFwcF9kb21haW4iOiJodHRwczovL2dhbWUucmVudC10eWNvb24uY29tL2FwaS93ZWJhcHAvIn0=!/I8l8YRs9CMCCVviTrLkfDXI9TrQcHk5ozR9gYRsVfw=',
+    appName: 'Rent_Tycoon_Game',
+  });
+</script>-->
+</body>
+</html>
