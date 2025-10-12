@@ -1,0 +1,43 @@
+body { padding: 0; margin: 0 }
+#unity-container { position: fixed; width: 100%; height: 100%; }
+#unity-canvas { width: 100%; height: 100%; background:#000000; }
+#unity-loading-bar { position: absolute; left: 0; top: 0; display: none; width: 100vw; height: 100vh; background: #000e28; }
+#unity-progress-bar-empty { margin-left: auto; margin-right: auto; width: 141px; height: 18px; margin-top: 10px; background: url('progress-bar-empty-dark.png') no-repeat center; position: absolute; bottom: 5%; left: 50%; transform: translateX(-50%); }
+#unity-progress-bar-full { width: 0; height: 18px; background: url('progress-bar-full-dark.png') no-repeat center }
+#unity-warning { position: absolute; left: 50%; top: 5%; transform: translate(-50%); background: white; padding: 10px; display: none }
+
+#video-logo
+{
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+#custom-logo-background
+{
+    /* background: url('bg.jpg') no-repeat top; */
+    background-size: cover; /* Ensure the image scales to stretch to fill its container */
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-height: 1920px) {
+    #custom-logo {
+        top: -100px;
+    }
+}
+
+#custom-logo
+{
+    /* background: url("rt-cover.png") no-repeat center; */
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
