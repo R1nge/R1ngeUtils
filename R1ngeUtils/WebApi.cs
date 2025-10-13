@@ -1,3 +1,11 @@
+using System.Collections.Generic;
+using System.Text;
+using Cysharp.Threading.Tasks;
+using Newtonsoft.Json;
+using R3;
+using UnityEngine;
+using UnityEngine.Networking;
+
 namespace R1ngeUtils {
 public class WebApi {
 public async UniTask<Observable<TResponse>> SendGetRequest<TResponse>(string url, string authHeaderName = "Authentication")

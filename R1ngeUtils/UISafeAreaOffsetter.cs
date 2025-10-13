@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace R1ngeUtils
 {
 public class UISafeAreaOffsetter : MonoBehaviour

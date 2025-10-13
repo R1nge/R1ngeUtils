@@ -1,3 +1,5 @@
+using System.Runtime.InteropServices;
+
 namespace R1ngeUtils
 {
 public class TelegramApi

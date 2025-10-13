@@ -1,3 +1,6 @@
+
+using UnityEngine;
+
 namespace R1ngeUtils
 {
     public static class VectorExtenstions
