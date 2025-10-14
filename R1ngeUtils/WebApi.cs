@@ -6,9 +6,12 @@ using R3;
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace R1ngeUtils {
-public class WebApi {
-public async UniTask<Observable<TResponse>> SendGetRequest<TResponse>(string url, string authHeaderName = "Authentication")
+
+namespace R1ngeUtils
+{
+    public class WebApi
+    {
+        public async UniTask<Observable<TResponse>> SendGetRequest<TResponse>(string url, string authHeaderName = "Authentication")
         {
             var webRequest = new UnityWebRequest(url);
             webRequest.downloadHandler = new DownloadHandlerBuffer();
@@ -46,7 +49,8 @@ public async UniTask<Observable<TResponse>> SendGetRequest<TResponse>(string url
             });
         }
 
-        public async UniTask<Observable<TResponse>> SendPostRequest<TRequest, TResponse>(string url, TRequest request, Dictionary<string, string> body, string authHeaderName = "Authentication", bool canFail = false)
+        public async UniTask<Observable<TResponse>> SendPostRequest<TRequest, TResponse>(string url, TRequest request,
+            Dictionary<string, string> body, string authHeaderName = "Authentication", bool canFail = false)
         {
             bool isRequestExist = typeof(TRequest) != typeof(Unit);
 
@@ -112,5 +116,5 @@ public async UniTask<Observable<TResponse>> SendGetRequest<TResponse>(string url
                 return observer;
             });
         }
-}
+    }
 }
