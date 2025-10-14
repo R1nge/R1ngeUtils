@@ -1,9 +1,12 @@
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace R1ngeUtils {
-public static class LerpUtils {
-  public static IEnumerator<Vector3> LerpPosition3DCoroutine(Vector3 startPosition, Vector3 targetPosition,
+namespace R1ngeUtils
+{
+    public static class LerpUtils
+    {
+        public static IEnumerator<Vector3> LerpPosition3DCoroutine(Vector3 startPosition, Vector3 targetPosition,
             float duration)
         {
             float time = 0;
@@ -37,7 +40,8 @@ public static class LerpUtils {
             yield return currentPosition;
         }
 
-        public static Vector3 LerpPosition3DUpdate(Vector3 startPosition, Vector3 targetPosition, ref float currentTime, float duration)
+        public static Vector3 LerpPosition3DUpdate(Vector3 startPosition, Vector3 targetPosition, ref float currentTime,
+            float duration)
         {
             if (currentTime < duration)
             {
@@ -49,7 +53,8 @@ public static class LerpUtils {
             return targetPosition;
         }
 
-        public static Vector2 LerpPosition2DUpdate(Vector2 startPosition, Vector2 targetPosition, ref float currentTime, float duration)
+        public static Vector2 LerpPosition2DUpdate(Vector2 startPosition, Vector2 targetPosition, ref float currentTime,
+            float duration)
         {
             if (currentTime < duration)
             {
@@ -58,7 +63,22 @@ public static class LerpUtils {
                 return lerp;
             }
 
-            return targetPosition;           
+            return targetPosition;
         }
-}
+
+        public static async IAsyncEnumerable<float> LerpFloat(float start, float target, float duration)
+        {
+            float time = 0;
+
+            while (time < duration)
+            {
+                time += Time.deltaTime;
+                float current = Mathf.Lerp(start, target, time / duration);
+                yield return current;
+                await UniTask.Yield();
+            }
+
+            yield return target;
+        }
+    }
 }
